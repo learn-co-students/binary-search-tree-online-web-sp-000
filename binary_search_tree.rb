@@ -20,7 +20,6 @@ class BST
     end
 
     def each(&block)
-        return if self.data.nil?
         self.left.each(&block) if self.left
         yield self.data
         self.right.each(&block) if self.right
