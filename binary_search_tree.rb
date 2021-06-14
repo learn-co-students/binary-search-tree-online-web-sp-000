@@ -23,10 +23,9 @@ class BST
         end
     end
 
-    def each
-        self.left.each if !!self.left
-        @@d << self.data
-        self.right.each if !!self.right
-        @@d
+    def each(&block)
+        left.each(&block) if !!left
+        block.call(data)
+        right.each(&block) if !!right
     end
 end
